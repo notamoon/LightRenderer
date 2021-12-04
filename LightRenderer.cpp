@@ -1,13 +1,6 @@
 #include "LightRenderer.h"
 #include "structures/bool_matrix.h"
 
-
-/**
- *
- * @param adafruitNeoPixel Reference to the Adafruit_NeoPixel to render on
- * @param width Width of the display
- * @param height Height of the display
- */
 LightRenderer::LightRenderer(Adafruit_NeoPixel &adafruitNeoPixel, unsigned int width, unsigned int height) {
     this->adafruitNeoPixel = adafruitNeoPixel;
     this->width = width;
@@ -16,20 +9,10 @@ LightRenderer::LightRenderer(Adafruit_NeoPixel &adafruitNeoPixel, unsigned int w
     this->area = matrix(width, height);
 }
 
-/**
- * Sets the renderer's current color to the specified color.
- * @param r the red component of the new rendering color
- * @param g the blue component of the new rendering color
- * @param b the green component of the new rendering color
- */
 void LightRenderer::setColor(int r, int g, int b) {
     this->color = 1;
 }
 
-/**
- * Sets the renderer's current color to the specified color.
- * @param zcolor the new rendering color
- */
 void LightRenderer::setColor(unsigned int zcolor = 0) {
     this->color = zcolor;
 }
