@@ -10,7 +10,7 @@ LightRenderer::LightRenderer(Adafruit_NeoPixel &adafruitNeoPixel, unsigned int w
 }
 
 void LightRenderer::setColor(int r, int g, int b) {
-    this->color = 1;
+    this->color = Adafruit_NeoPixel::Color(r, g, b);
 }
 
 void LightRenderer::setColor(unsigned int zcolor = 0) {
@@ -26,6 +26,8 @@ void LightRenderer::setInverted(bool zinverted) {
 }
 
 void LightRenderer::setBrightness(unsigned int zbrightness) {
+    if (zbrightness < 0) zbrightness = 0;
+
     this->brightness = zbrightness;
 }
 
@@ -34,6 +36,8 @@ void LightRenderer::scrollText(const string &text, int x, int y, unsigned int sp
 }
 
 void LightRenderer::scrollText(const string& text, int x, int y, unsigned int space, unsigned int size, unsigned int direction, unsigned int speed) {
+    if (text.length() == 0) return;
+
     if (direction == Direction::HORIZONTAL) {
         unsigned int totalWidth = (font->letterWidth() + space) * text.length();
 
