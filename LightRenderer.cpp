@@ -31,15 +31,15 @@ void LightRenderer::setBrightness(unsigned int zbrightness) {
     this->brightness = zbrightness;
 }
 
-void LightRenderer::scrollText(const string &text, int x, int y, unsigned int space, unsigned int direction, unsigned int speed) {
+void LightRenderer::scrollText(const String &text, int x, int y, int space, int direction, int speed) {
     scrollText(text, x, y, space, -1, direction, speed);
 }
 
-void LightRenderer::scrollText(const string& text, int x, int y, unsigned int space, unsigned int size, unsigned int direction, unsigned int speed) {
+void LightRenderer::scrollText(const String& text, int x, int y, int space, int size, int direction, int speed) {
     if (text.length() == 0) return;
 
     if (direction == Direction::HORIZONTAL) {
-        unsigned int totalWidth = (font->letterWidth() + space) * text.length();
+        int totalWidth = (font->letterWidth() + space) * text.length();
 
         if (size == -1) size = totalWidth;
 
@@ -49,11 +49,12 @@ void LightRenderer::scrollText(const string& text, int x, int y, unsigned int sp
 
         bool_matrix textArea(totalWidth, font->letterHeight());
 
-        unsigned int ax = 0;
-        unsigned int ay = 0;
+        int ax = 0;
+        int ay = 0;
+
 
         for (char i : text) {
-            matrix letterData = font->letterData(i);
+            bool_matrix letterData = font->letterData(i);
 
             if (inverted) {
                 for (int dy = 0, cy = font->letterHeight() - 1; dy < font->letterHeight(); dy++, cy--) {
@@ -73,7 +74,7 @@ void LightRenderer::scrollText(const string& text, int x, int y, unsigned int sp
             ax += font->letterWidth() + space;
         }
 
-        unsigned int progress = speed != 0 ? timer / speed % totalWidth : 0;
+        int progress = speed != 0 ? timer / speed % totalWidth : 0;
 
         for (int cy = y + font->letterHeight() - 1, dy = 0; cy >= y; cy--, dy++) {
             for (int cx = x, dx = 0; cx < x + totalWidth; cx++, dx++) {
@@ -102,7 +103,7 @@ void LightRenderer::scrollText(const string& text, int x, int y, unsigned int sp
         unsigned int ay = 0;
 
         for (char i : text) {
-            matrix letterData = font->letterData(i);
+            bool_matrix letterData = font->letterData(i);
 
             for (int dy = font->letterHeight() - 1; dy >= 0; dy--) {
                 for (int dx = 0; dx < font->letterWidth(); dx++) {
@@ -151,7 +152,11 @@ void LightRenderer::drawPixel(int x, int y) {
 }
 
 void LightRenderer::clear() {
-    this->area = matrix(width, height);
+    for (int x = 0; x < 30; x++) {
+        for (int y = 0; y < 20; y++) {
+            area.set_safe(x, y, 0);
+        }
+    }
 }
 
 void LightRenderer::setup() {
@@ -162,6 +167,8 @@ void LightRenderer::setup() {
 }
 
 void LightRenderer::update() {
+    if (timer < 0) timer = 0;
+
     timer++;
 }
 
@@ -176,7 +183,7 @@ void LightRenderer::render() {
                 adafruitNeoPixel.setPixelColor(pixel++, area[x][y]);
         }
         else {
-            for (unsigned int x = width - 1; x >= 0; x--)
+            for (int x = width - 1; x >= 0; x--)
                 adafruitNeoPixel.setPixelColor(pixel++, area[x][y]);
         }
     }

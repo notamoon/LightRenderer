@@ -10,7 +10,7 @@ class Font5x7 : public Font {
 const int LETTER_WIDTH  = 5;
 const int LETTER_HEIGHT = 7;
 
-const int UPPERCASE_A[7][5] = 
+const bool UPPERCASE_A[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -20,7 +20,7 @@ const int UPPERCASE_A[7][5] =
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
 };
-const int UPPERCASE_B[7][5] = 
+const bool UPPERCASE_B[7][5] = 
 {
 	1, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -30,7 +30,7 @@ const int UPPERCASE_B[7][5] =
 	1, 0, 0, 0, 1, 
 	1, 1, 1, 1, 0, 
 };
-const int UPPERCASE_C[7][5] = 
+const bool UPPERCASE_C[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -40,7 +40,7 @@ const int UPPERCASE_C[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int UPPERCASE_D[7][5] = 
+const bool UPPERCASE_D[7][5] = 
 {
 	1, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -50,7 +50,7 @@ const int UPPERCASE_D[7][5] =
 	1, 0, 0, 0, 1, 
 	1, 1, 1, 1, 0, 
 };
-const int UPPERCASE_E[7][5] = 
+const bool UPPERCASE_E[7][5] = 
 {
 	1, 1, 1, 1, 1, 
 	1, 0, 0, 0, 0, 
@@ -60,7 +60,7 @@ const int UPPERCASE_E[7][5] =
 	1, 0, 0, 0, 0, 
 	1, 1, 1, 1, 1, 
 };
-const int UPPERCASE_F[7][5] = 
+const bool UPPERCASE_F[7][5] = 
 {
 	1, 1, 1, 1, 1, 
 	1, 0, 0, 0, 0, 
@@ -70,7 +70,7 @@ const int UPPERCASE_F[7][5] =
 	1, 0, 0, 0, 0, 
 	1, 0, 0, 0, 0, 
 };
-const int UPPERCASE_G[7][5] = 
+const bool UPPERCASE_G[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -80,7 +80,7 @@ const int UPPERCASE_G[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int UPPERCASE_H[7][5] = 
+const bool UPPERCASE_H[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
@@ -90,7 +90,7 @@ const int UPPERCASE_H[7][5] =
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
 };
-const int UPPERCASE_I[7][5] = 
+const bool UPPERCASE_I[7][5] = 
 {
 	1, 1, 1, 1, 1, 
 	0, 0, 1, 0, 0, 
@@ -100,7 +100,7 @@ const int UPPERCASE_I[7][5] =
 	0, 0, 1, 0, 0, 
 	1, 1, 1, 1, 1, 
 };
-const int UPPERCASE_J[7][5] = 
+const bool UPPERCASE_J[7][5] = 
 {
 	1, 1, 1, 1, 1, 
 	0, 0, 0, 1, 0, 
@@ -110,7 +110,7 @@ const int UPPERCASE_J[7][5] =
 	1, 0, 0, 1, 0, 
 	0, 1, 1, 0, 0, 
 };
-const int UPPERCASE_K[7][5] = 
+const bool UPPERCASE_K[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 1, 0, 
@@ -120,7 +120,7 @@ const int UPPERCASE_K[7][5] =
 	1, 0, 0, 1, 0, 
 	1, 0, 0, 0, 1, 
 };
-const int UPPERCASE_L[7][5] = 
+const bool UPPERCASE_L[7][5] = 
 {
 	1, 0, 0, 0, 0, 
 	1, 0, 0, 0, 0, 
@@ -130,7 +130,7 @@ const int UPPERCASE_L[7][5] =
 	1, 0, 0, 0, 0, 
 	1, 1, 1, 1, 1, 
 };
-const int UPPERCASE_M[7][5] = 
+const bool UPPERCASE_M[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 1, 0, 1, 1, 
@@ -140,7 +140,7 @@ const int UPPERCASE_M[7][5] =
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
 };
-const int UPPERCASE_N[7][5] = 
+const bool UPPERCASE_N[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 1, 0, 0, 1, 
@@ -150,7 +150,7 @@ const int UPPERCASE_N[7][5] =
 	1, 0, 0, 1, 1, 
 	1, 0, 0, 0, 1, 
 };
-const int UPPERCASE_O[7][5] = 
+const bool UPPERCASE_O[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -160,7 +160,7 @@ const int UPPERCASE_O[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int UPPERCASE_P[7][5] = 
+const bool UPPERCASE_P[7][5] = 
 {
 	1, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -170,7 +170,7 @@ const int UPPERCASE_P[7][5] =
 	1, 0, 0, 0, 0, 
 	1, 0, 0, 0, 0, 
 };
-const int UPPERCASE_Q[7][5] = 
+const bool UPPERCASE_Q[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -180,7 +180,7 @@ const int UPPERCASE_Q[7][5] =
 	1, 0, 1, 0, 1, 
 	0, 1, 1, 1, 1, 
 };
-const int UPPERCASE_R[7][5] = 
+const bool UPPERCASE_R[7][5] = 
 {
 	1, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -190,7 +190,7 @@ const int UPPERCASE_R[7][5] =
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
 };
-const int UPPERCASE_S[7][5] = 
+const bool UPPERCASE_S[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -200,7 +200,7 @@ const int UPPERCASE_S[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int UPPERCASE_T[7][5] = 
+const bool UPPERCASE_T[7][5] = 
 {
 	1, 1, 1, 1, 1, 
 	0, 0, 1, 0, 0, 
@@ -210,7 +210,7 @@ const int UPPERCASE_T[7][5] =
 	0, 0, 1, 0, 0, 
 	0, 0, 1, 0, 0, 
 };
-const int UPPERCASE_U[7][5] = 
+const bool UPPERCASE_U[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
@@ -220,7 +220,7 @@ const int UPPERCASE_U[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int UPPERCASE_V[7][5] = 
+const bool UPPERCASE_V[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
@@ -230,7 +230,7 @@ const int UPPERCASE_V[7][5] =
 	0, 1, 0, 1, 0, 
 	0, 0, 1, 0, 0, 
 };
-const int UPPERCASE_W[7][5] = 
+const bool UPPERCASE_W[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
@@ -240,7 +240,7 @@ const int UPPERCASE_W[7][5] =
 	1, 0, 1, 0, 1, 
 	0, 1, 0, 1, 0, 
 };
-const int UPPERCASE_X[7][5] = 
+const bool UPPERCASE_X[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
@@ -250,7 +250,7 @@ const int UPPERCASE_X[7][5] =
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
 };
-const int UPPERCASE_Y[7][5] = 
+const bool UPPERCASE_Y[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
@@ -260,7 +260,7 @@ const int UPPERCASE_Y[7][5] =
 	0, 0, 1, 0, 0, 
 	0, 0, 1, 0, 0, 
 };
-const int UPPERCASE_Z[7][5] = 
+const bool UPPERCASE_Z[7][5] = 
 {
 	1, 1, 1, 1, 1, 
 	0, 0, 0, 0, 1, 
@@ -270,7 +270,7 @@ const int UPPERCASE_Z[7][5] =
 	1, 0, 0, 0, 0, 
 	1, 1, 1, 1, 1, 
 };
-const int DIGIT_0[7][5] = 
+const bool DIGIT_0[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -280,7 +280,7 @@ const int DIGIT_0[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int DIGIT_1[7][5] = 
+const bool DIGIT_1[7][5] = 
 {
 	0, 1, 1, 0, 0, 
 	0, 0, 1, 0, 0, 
@@ -290,7 +290,7 @@ const int DIGIT_1[7][5] =
 	0, 0, 1, 0, 0, 
 	0, 0, 1, 0, 0, 
 };
-const int DIGIT_2[7][5] = 
+const bool DIGIT_2[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -300,7 +300,7 @@ const int DIGIT_2[7][5] =
 	0, 1, 0, 0, 0, 
 	1, 1, 1, 1, 1, 
 };
-const int DIGIT_3[7][5] = 
+const bool DIGIT_3[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -310,7 +310,7 @@ const int DIGIT_3[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int DIGIT_4[7][5] = 
+const bool DIGIT_4[7][5] = 
 {
 	1, 0, 0, 0, 1, 
 	1, 0, 0, 0, 1, 
@@ -320,7 +320,7 @@ const int DIGIT_4[7][5] =
 	0, 0, 0, 0, 1, 
 	0, 0, 0, 0, 1, 
 };
-const int DIGIT_5[7][5] = 
+const bool DIGIT_5[7][5] = 
 {
 	1, 1, 1, 1, 1, 
 	1, 0, 0, 0, 0, 
@@ -330,7 +330,7 @@ const int DIGIT_5[7][5] =
 	0, 0, 0, 0, 1, 
 	1, 1, 1, 1, 0, 
 };
-const int DIGIT_6[7][5] = 
+const bool DIGIT_6[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -340,7 +340,7 @@ const int DIGIT_6[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int DIGIT_7[7][5] = 
+const bool DIGIT_7[7][5] = 
 {
 	1, 1, 1, 1, 1, 
 	0, 0, 0, 0, 1, 
@@ -350,7 +350,7 @@ const int DIGIT_7[7][5] =
 	0, 0, 1, 0, 0, 
 	0, 0, 1, 0, 0, 
 };
-const int DIGIT_8[7][5] = 
+const bool DIGIT_8[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -360,7 +360,7 @@ const int DIGIT_8[7][5] =
 	1, 0, 0, 0, 1, 
 	0, 1, 1, 1, 0, 
 };
-const int DIGIT_9[7][5] = 
+const bool DIGIT_9[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -370,7 +370,7 @@ const int DIGIT_9[7][5] =
 	0, 0, 0, 0, 1, 
 	0, 0, 0, 0, 1, 
 };
-const int PERIOD[7][5] = 
+const bool PERIOD[7][5] = 
 {
 	0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 
@@ -380,7 +380,7 @@ const int PERIOD[7][5] =
 	0, 0, 0, 0, 0, 
 	1, 0, 0, 0, 0, 
 };
-const int EXCLAMATION_POINT[7][5] = 
+const bool EXCLAMATION_POINT[7][5] =
 {
 	1, 0, 0, 0, 0, 
 	1, 0, 0, 0, 0, 
@@ -390,7 +390,7 @@ const int EXCLAMATION_POINT[7][5] =
 	0, 0, 0, 0, 0, 
 	1, 0, 0, 0, 0, 
 };
-const int QUESTION_MARK[7][5] = 
+const bool QUESTION_MARK[7][5] = 
 {
 	0, 1, 1, 1, 0, 
 	1, 0, 0, 0, 1, 
@@ -400,15 +400,25 @@ const int QUESTION_MARK[7][5] =
 	0, 0, 0, 0, 0, 
 	0, 0, 1, 0, 0, 
 };
-const int UNDERSCORE[7][5] = 
+const bool UNDERSCORE[7][5] =
 {
-	0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 
-	1, 1, 1, 1, 1, 
+	0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0,
+	1, 1, 1, 1, 1,
+};
+const bool SPACE[7][5] =
+{
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
 };
 
 public:
@@ -422,8 +432,8 @@ public:
 		return LETTER_HEIGHT;
 	}
 
-	matrix letterData(char letter) const override {
-matrix data(LETTER_WIDTH, LETTER_HEIGHT);
+    bool_matrix letterData(char letter) const override {
+        bool_matrix data(LETTER_WIDTH, LETTER_HEIGHT);
 
 		switch (letter) {
 			case 'a':
@@ -653,6 +663,9 @@ matrix data(LETTER_WIDTH, LETTER_HEIGHT);
 				}
 				break;
 			default:
+                for (int y = 0; y < LETTER_HEIGHT; y++) {
+                    for (int x = 0; x < LETTER_WIDTH; x++) data[x][y] = SPACE[y][x];
+                }
 				break;
 		}
 		return data;

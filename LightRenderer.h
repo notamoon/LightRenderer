@@ -9,7 +9,6 @@
 
 #include "Adafruit_NeoPixel.h"
 
-#include <string>
 #include <vector>
 
 using namespace std;
@@ -54,7 +53,7 @@ public:
      * @param direction direction to scroll the text
      * @param speed speed of the scrolling
      */
-    void scrollText(const string& text, int x, int y, unsigned int space, unsigned int size, unsigned int direction, unsigned int speed);
+    void scrollText(const String& text, int x, int y, int space, int size, int direction, int speed);
 
     /**
      * Draw scrolling text onto the display.
@@ -65,7 +64,7 @@ public:
      * @param direction direction to scroll the text
      * @param speed speed of the scrolling
      */
-    void scrollText(const string& text, int x, int y, unsigned int space, unsigned int direction, unsigned int speed);
+    void scrollText(const String& text, int x, int y, int space, int direction, int speed);
 
     /**
      * Draw a rectangular outlined area onto the display.
@@ -123,15 +122,17 @@ public:
      */
     void setBrightness(unsigned int zbrightness);
 
+    unsigned long long clock() { return timer; }
+
 private:
     Adafruit_NeoPixel adafruitNeoPixel;
 
-    unsigned int width, height;
+    int width, height;
 
     matrix area;
 
-    unsigned int brightness = 255;
-    unsigned int color = 0;
+    int brightness = 255;
+    int color = 0;
 
     const Font* font = nullptr;
 

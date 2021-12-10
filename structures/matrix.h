@@ -16,7 +16,7 @@ private:
     int x, y;
 
 public:
-    matrix(unsigned int x, unsigned int y) : x(x), y(y) {
+    matrix(uint32_t x, uint32_t y) : x(x), y(y) {
         m.resize(x, std::vector<uint32_t>(y,0));
     }
 
