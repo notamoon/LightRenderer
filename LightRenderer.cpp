@@ -32,12 +32,10 @@ void LightRenderer::setBrightness(unsigned int zbrightness) {
 }
 
 void LightRenderer::scrollText(const String &text, int x, int y, int space, int direction, int speed) {
-    scrollText(text, x, y, space, -1, direction, speed);
+    return scrollText(text, x, y, space, -1, direction, speed);
 }
 
 void LightRenderer::scrollText(const String& text, int x, int y, int space, int size, int direction, int speed) {
-    if (text.length() == 0) return;
-
     if (direction == Direction::HORIZONTAL) {
         int totalWidth = (font->letterWidth() + space) * text.length();
 
@@ -47,6 +45,8 @@ void LightRenderer::scrollText(const String& text, int x, int y, int space, int 
 
         totalWidth += size;
 
+        int progress = speed != 0 ? timer / speed % totalWidth : 0;
+
         bool_matrix textArea(totalWidth, font->letterHeight());
 
         int ax = 0;
@@ -55,6 +55,7 @@ void LightRenderer::scrollText(const String& text, int x, int y, int space, int 
 
         for (char i : text) {
             bool_matrix letterData = font->letterData(i);
+            ESP.wdtFeed();
 
             if (inverted) {
                 for (int dy = 0, cy = font->letterHeight() - 1; dy < font->letterHeight(); dy++, cy--) {
@@ -74,9 +75,9 @@ void LightRenderer::scrollText(const String& text, int x, int y, int space, int 
             ax += font->letterWidth() + space;
         }
 
-        int progress = speed != 0 ? timer / speed % totalWidth : 0;
-
         for (int cy = y + font->letterHeight() - 1, dy = 0; cy >= y; cy--, dy++) {
+            ESP.wdtFeed();
+
             for (int cx = x, dx = 0; cx < x + totalWidth; cx++, dx++) {
                 if (dx < size && textArea[progress][dy]) area.set_safe(cx, cy, color);
 
@@ -97,6 +98,8 @@ void LightRenderer::scrollText(const String& text, int x, int y, int space, int 
 
         totalHeight += size;
 
+        int progress = speed != 0 ? (timer / speed + size - 1 - y) % totalHeight : size - 1 - y;
+
         bool_matrix textArea(font->letterWidth(), totalHeight);
 
         unsigned int ax = 0;
@@ -104,6 +107,7 @@ void LightRenderer::scrollText(const String& text, int x, int y, int space, int 
 
         for (char i : text) {
             bool_matrix letterData = font->letterData(i);
+            ESP.wdtFeed();
 
             for (int dy = font->letterHeight() - 1; dy >= 0; dy--) {
                 for (int dx = 0; dx < font->letterWidth(); dx++) {
@@ -114,9 +118,9 @@ void LightRenderer::scrollText(const String& text, int x, int y, int space, int 
             ay += font->letterHeight() + space;
         }
 
-        unsigned int progress = speed != 0 ? (timer / speed + size - 1 - y) % totalHeight : size - 1 - y;
-
         for (int cx = x, dx = 0; cx < x + font->letterWidth(); cx++, dx++) {
+            ESP.wdtFeed();
+
             for (int cy = y, dy = 0; cy < y + totalHeight; cy++, dy++) {
                 if (dy < size && textArea[dx][progress]) area.set_safe(cx, cy, color);
 
@@ -173,6 +177,8 @@ void LightRenderer::update() {
 }
 
 void LightRenderer::render() {
+    yield();
+
     adafruitNeoPixel.clear();
 
     int pixel = 0;
@@ -188,6 +194,7 @@ void LightRenderer::render() {
         }
     }
 
+    ESP.wdtFeed();
     adafruitNeoPixel.setBrightness(brightness);
     adafruitNeoPixel.show();
 }
